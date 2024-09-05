@@ -127,7 +127,7 @@ function dltAll() {
 }
 
 function dltContact(ind) {
-  let isOk = confirm(`Are you sure you want to delete contact of ${users[ind].name} ?`);
+  let isOk = confirm(Are you sure you want to delete contact of ${users[ind].name} ?);
   if (isOk) {
     users = users.slice(0, ind).concat(users.slice(ind + 1))
     list.innerHTML = ``;
@@ -209,6 +209,7 @@ function saveEdit(event, ind) {
         alert("Invalid email address");
         return;
       }
+      
     }
     const newUser = { name: newName, number: newNumber, email: newEmail };
     users[ind] = newUser;
@@ -227,8 +228,8 @@ function searchContact(e) {
       return user.name.toLowerCase().startsWith(e.target.value.toLowerCase());
     });
   list.innerHTML = ``;
-  filteredList.forEach(user => {
-    addContact(user);
+  filteredList.forEach((user,ind) => {
+    addContact(user, ind);
   })
 }
 
