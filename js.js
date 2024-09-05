@@ -124,7 +124,7 @@ function dltAll() {
 }
 
 function dltContact(ind) {
-  let isOk = confirm(Are you sure you want to delete contact of ${users[ind].name} ?);
+  let isOk = confirm(`Are you sure you want to delete contact of ${users[ind].name} ?`);
   if (isOk) {
     users = users.slice(0, ind).concat(users.slice(ind + 1));
     list.innerHTML = ``;
@@ -248,3 +248,4 @@ function checkName(name, ind) {
     }
   }
   return false;
+}
